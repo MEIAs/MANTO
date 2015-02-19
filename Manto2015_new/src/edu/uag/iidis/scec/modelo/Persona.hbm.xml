@@ -1,0 +1,30 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">  
+
+<hibernate-mapping>
+    <class name="edu.uag.iidis.scec.modelo.Personas"
+           table="personas"
+           dynamic-update="false"
+           dynamic-insert="false">
+
+        <property name="name"
+            column="Name"
+            type="java.lang.String"/>
+               
+        <property name="apellido"
+			column="Apellido"
+            type="java.lang.String" />
+		
+		<property name="direccion"
+			column="Direccion"
+            type="java.lang.String" />
+		
+		<property name="telefono"
+			column="telefono"
+            type="java.lang.int" />
+		
+		<property name="ciundadnacimiento"
+			column="CiundadNacimiento"
+            type="java.lang.String" />
+    </class>
+
+</hibernate-mapping>
