@@ -14,8 +14,8 @@
 </style>
 <script language="javascript" type="text/javascript">
 <!--
-  function EliminarAuto(strAutoPlaca){
-    return confirm("¿Desea eliminar el Auto '" + strAutoPlaca + "'?")
+  function EliminarRol(strRolName){
+    return confirm("¿Desea eliminar el rol '" + strRolName + "'?")
   }
 -->
 </script>
@@ -24,7 +24,7 @@
     <div class="table" style="width:100%" >
         <div class="tr">
             <div class="td" colspan="4" style="padding-top:25px; padding-bottom:25px;">
-                <a href="solicitarRegistroAutos.do" class="HipervinculoAdmon boton">Agregar nuevo Auto...</a>
+                <a href="solicitarRegistroAutos.do" class="HipervinculoAdmon boton">Agregar nuevo rol...</a>
             </div>
         </div>
         <div class="tr">
@@ -37,21 +37,17 @@
          <div class="td" style="width:58%;border-right-style:solid; border-left-style:solid; border-width:1px; border-color:#000000;"><b><fmt:message key="formaListadoAutos.etiqueta.descripcion" /></b></div>
          <div class="td" style="width:20%"><b><fmt:message key="formaListadoAutos.etiqueta.administracion" /></b></div>
         </div>
-        <c:forEach var="auto" items="${formaListadoAutos.autos}">
+        <c:forEach var="rol" items="${formaListadoAutos.roles}">
             <div class="tr">
-                <div class="td" align="left" style="width:20%"><c:out value="${auto.marca}"/></div>
-                <div class="td" align="left" style="width:58%"><c:out value="${auto.color}"/></div>
-                <div class="td" align="left" style="width:58%"><c:out value="${auto.placa}"/></div>
-                <div class="td" align="left" style="width:58%"><c:out value="${auto.propietario}"/></div>
-                <div class="td" align="left" style="width:58%"><c:out value="${auto.estado}"/></div>
-                <div class="td" align="left" style="width:58%"><c:out value="${auto.pais}"/></div>
+                <div class="td" align="left" style="width:20%"><c:out value="${rol.nombre}"/></div>
+                <div class="td" align="left" style="width:58%"><c:out value="${rol.descripcion}"/></div>
                 <div class="td" align="left" style="width:20%">
-                    <a href='solicitarModificarAutos.do?id=<c:out value="${auto.idAuto}"/>'
+                    <a href='solicitarModificarAutos.do?id=<c:out value="${rol.id}"/>'
 					   class="HipervinculoAdmon">
                         <fmt:message key="formaListadoAutos.etiqueta.modificar" />
                     </a>
-                    <a href='procesarEliminarAutos.do?id=<c:out value="${auto.idAuto}"/>'
-					   onClick="javascript: return EliminarAuto('<c:out value="${auto.marca}"/>')"
+                    <a href='procesarEliminarAutos.do?id=<c:out value="${rol.id}"/>'
+					   onClick="javascript: return EliminarRol('<c:out value="${rol.nombre}"/>')"
 					   class="HipervinculoAdmon">
                         <fmt:message key="formaListadoAutos.etiqueta.eliminar" />
                     </a>
@@ -59,6 +55,6 @@
             </div>
         </c:forEach>
         <div class="tr">
-            <div class="td" colspan="4" align="right" style="padding-top:25px;"><b>Total:</b> ${formaListadoAutos.contador}</div>
+            <div class="td" colspan="4" align="right" style="padding-top:25px;"><b>Total:</b> ${formaListadoRoles.contador}</div>
         </div>
     </div>

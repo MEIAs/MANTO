@@ -2,7 +2,7 @@ $(document).on('ready',function() {
 	$('#ciudadBuscar').keyup(function() {
 	  	$('.buscar').css('display','block');
 	  	var busqueda = $("#ciudadBuscar").val();
-	  	$.post("http://localhost:5431/usrval/procesarRegistroGenteCiudades.do", { ciudadBuscar: busqueda })
+	  	$.post("http://localhost:8080/usrval/procesarRegistroGenteCiudades.do", { ciudadBuscar: busqueda })
 		.done(function(data) {
 		  	$('.buscar ul').html(data);
 		})
@@ -12,7 +12,7 @@ $(document).on('ready',function() {
 	});
 	var valorNombres = 0;
 	$( "#nombres" ).click(function() {
-		$.post("http://localhost:5431/usrval/procesarListadoGenteOrd.do", { ordenar: "nombres", tipo: valorNombres })
+		$.post("http://localhost:8080/usrval/procesarListadoGenteOrd.do", { ordenar: "nombres", tipo: valorNombres })
 		.done(function(data) {
 		  	$('#tablecontent').html(data);
 		  	if(valorNombres==0) {
@@ -27,7 +27,7 @@ $(document).on('ready',function() {
 	});
 	var valorApellidos = 0;
 	$( "#apellidos" ).click(function() {
-		$.post("http://localhost:5431/usrval/procesarListadoGenteOrd.do", { ordenar: "apellidos", tipo: valorApellidos })
+		$.post("http://localhost:8080/usrval/procesarListadoGenteOrd.do", { ordenar: "apellidos", tipo: valorApellidos })
 		.done(function(data) {
 		  	$('#tablecontent').html(data);
 		  	if(valorApellidos==0) {
@@ -42,7 +42,7 @@ $(document).on('ready',function() {
 	});
 	var valorDireccion = 0;
 	$( "#direccion" ).click(function() {
-		$.post("http://localhost:5431/usrval/procesarListadoGenteOrd.do", { ordenar: "direccion", tipo: valorDireccion })
+		$.post("http://localhost:8080/usrval/procesarListadoGenteOrd.do", { ordenar: "direccion", tipo: valorDireccion })
 		.done(function(data) {
 			console.log(data);
 		  	$('#tablecontent').html(data);
@@ -58,7 +58,7 @@ $(document).on('ready',function() {
 	});
 	var valorTelefono = 0;
 	$( "#telefono" ).click(function() {
-		$.post("http://localhost:5431/usrval/procesarListadoGenteOrd.do", { ordenar: "telefono", tipo: valorTelefono })
+		$.post("http://localhost:8080/usrval/procesarListadoGenteOrd.do", { ordenar: "telefono", tipo: valorTelefono })
 		.done(function(data) {
 		  	$('#tablecontent').html(data);
 		  	if(valorTelefono==0) {
@@ -73,7 +73,7 @@ $(document).on('ready',function() {
 	});
 	var valorCiudad = 0;
 	$( "#ciudad" ).click(function() {
-		$.post("http://localhost:5431/usrval/procesarListadoGenteOrd.do", { ordenar: "ciudad", tipo: valorCiudad })
+		$.post("http://localhost:8080/usrval/procesarListadoGenteOrd.do", { ordenar: "ciudad", tipo: valorCiudad })
 		.done(function(data) {
 		  	$('#tablecontent').html(data);
 		  	if(valorCiudad==0) {
