@@ -67,6 +67,7 @@ table.barraDerechos {
 /* Aqui empueza */
 body {
 	background: #0687A4;
+	background-image: url("..\images\background.jpg");
 
 }
 .barraBanner2 {
