@@ -1,2 +1,3 @@
 str text = pikachu.readKeyboardInput()
 charmander.println("Hola %s", str);
+exit()
